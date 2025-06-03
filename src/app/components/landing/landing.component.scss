@@ -1,0 +1,312 @@
+// Opcional: Define un tamaño de fuente base para REM.
+// 1rem = 16px por defecto. Puedes ajustar esto si tu diseño Figma tiene una base diferente.
+// html {
+//   font-size: 16px;
+// }
+
+.video-emotivo {
+  position: relative;
+  width: 100%;
+  height: auto;
+  // Calculamos la altura en vh. 980px / 11.17 = ~87.73vh
+  // Usamos una altura mínima para evitar que sea muy pequeño en pantallas cortas
+  min-height: 500px; // Un alto mínimo en px para pantallas muy pequeñas
+  height: 100vh; // Aproximadamente 980px en una pantalla de 1117px de alto
+  background-image: url("/assets/gifs/Video-inicio.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+
+
+  display: flex;
+  flex-direction: column;
+  // Calculamos el gap en vw: 110px / 17.28 = ~6.37vw
+  gap: 4vh;
+  // Calculamos padding-top en vh: 400px / 11.17 = ~35.8vw. Pero quizás 35.8vh es mejor
+  // O considera un valor en vw si quieres que la separación desde arriba dependa del ancho
+  padding-top: 34vh; // Mantiene la proporción de la pantalla verticalmente
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 0; // Z-index 0 está bien a menos que haya otros elementos con z-index negativo
+
+  .titulo-principal {
+    // Para 80px en un ancho de 1728px: 80px / 17.28 = ~4.63vw
+    // Usamos clamp para controlar el tamaño de fuente, con un mínimo en rem y un máximo en rem
+    font-size: clamp(
+      2.5rem,
+      4vw,
+      5rem
+    ); // Por ejemplo, de 40px a 80px, escalando con el ancho
+    display: flex; // Ya estaba en flex, lo mantenemos
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin: 0;
+    width: 100%; // Esto hace que el título ocupe todo el ancho disponible del flex-container
+    // Para evitar que el título se extienda demasiado en pantallas grandes, puedes añadir un max-width
+    max-width: 1200px; // O un porcentaje, ej. 80vw;
+    height: auto;
+  }
+
+  .descripcion-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    // Calculamos padding en vw: 120px / 17.28 = ~6.94vw
+    padding-left: 3vw;
+    padding-right: 3vw;
+  }
+
+  .descripcion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: "Lato", sans-serif;
+    // Para 40px en un ancho de 1728px: 40px / 17.28 = ~2.31vw
+    font-size: clamp(
+      0.5rem,
+      5vh,
+      2.5rem
+    ); // Por ejemplo, de 19.2px a 40px, escalando con el ancho
+    font-weight: 500;
+    text-align: center;
+    // Para 42px de line-height en un ancho de 1728px: 42px / 17.28 = ~2.43vw
+    // Pero line-height es mejor que sea sin unidad o en 'em' para que se adapte al font-size
+    line-height: 1.2; // Un line-height sin unidad es relativo al font-size
+    // Si tu diseño requiere que el texto de la descripción no sea demasiado ancho, usa max-width
+  }
+
+  .descubrir-mas {
+    display: flex;
+    height: 100%;
+    // Calculamos padding-bottom en vh: 60px / 11.17 = ~5.37vh
+    padding-bottom: 0; // Se ajusta a la altura del viewport
+    flex-direction: column;
+    // height: 100%; // Este 100% hará que ocupe todo el espacio restante del flex-container,
+    // si eso no es lo que quieres, quítalo. Para posicionamiento, es común que solo sea el contenido.
+    justify-content: flex-end; // Empuja el contenido hacia abajo dentro del .video-emotivo
+    align-items: center;
+    gap: 0; // Mantenemos 0px si no hay espacio entre imagen y texto
+    cursor: pointer;
+    font-family: "Raleway", sans-serif;
+    // Para 28px en un ancho de 1728px: 28px / 17.28 = ~1.62vw
+    font-size: clamp(0.9rem, 1.62vw, 1.75rem); // Por ejemplo, de 14.4px a 28px
+    font-weight: 600;
+    text-transform: uppercase;
+
+    a {
+      color: white; // Asegúrate de que el enlace sea visible sobre el fondo
+      text-decoration: none; // Elimina el subrayado por defecto
+      display: flex; // Para alinear la imagen y el texto
+      align-items: center; // Centra verticalmente la imagen y el texto
+      gap: 0.5rem; // Espacio entre la imagen y el texto, ajusta según tu diseño
+    }
+
+    img {
+      // Para 37px en un ancho de 1728px: 37px / 17.28 = ~2.14vw
+      // Para 37px en un alto de 1117px: 37px / 11.17 = ~3.31vh
+      // Puedes elegir el que escale mejor, o una mezcla para un ícono cuadrado
+      width: 37px;
+      height: 37px; // O 3.31vh, o clamp(1.5rem, 2.14vw, 2.5rem)
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.video-explicativo {
+  position: relative;
+  width: 100%;
+  // Calculamos la altura en vh. 980px / 11.17 = ~87.73vh
+  // Usamos una altura mínima para evitar que sea muy pequeño en pantallas cortas
+  min-height: 500px; // Un alto mínimo en px para pantallas muy pequeñas
+  height: auto; // Aproximadamente 980px en una pantalla de 1117px de alto
+
+  color: black;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4vh; // Calculamos el gap en vw: 110px / 17.28 = ~6.37vw
+  padding-top: 10vh; // Mantiene la proporción de la pantalla verticalmente
+  justify-content: flex-start;
+  align-items: center;
+  .titulo {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    text-align: center;
+  }
+
+  .explicacion {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5vw;
+    padding-right: 4vw;
+    font-family: "Lato";
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .pantalla-con-video {
+    background-image: url("/assets/img/Fondo-olas.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      padding-left: 12vw;
+      padding-right: 12vw;
+      width: 100%;
+      height: auto;
+      object-fit: cover; // Asegura que la imagen cubra todo el contenedor sin distorsionarse
+    }
+  }
+}
+
+.motivos {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-top: 5vh;
+  padding-left: 11vw;
+  padding-right: 11vw;
+  padding-bottom: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+
+  .tarjetas-horizontales {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2vw;
+    overflow-x: hidden; /* Oculta el desbordamiento horizontal */
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+    box-sizing: border-box;
+
+    .desplazar-tarjetas {
+      position: absolute;
+      background-color: #bebebe;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      z-index: 1; // Asegura que el botón esté por encima de las tarjetas
+      top: 50%;
+      right: 4vw; // Ajusta la posición del botón a la derecha (corregí aquí según tu comentario anterior)
+
+      &:hover {
+        background-color: #3050a0; // Un tono más oscuro al pasar el mouse
+      }
+    }
+    .devolver-tarjetas {
+      position: absolute;
+      background-color: #bebebe;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      z-index: 1; // Asegura que el botón esté por encima de las tarjetas
+      top: 50%;
+      left: 4vw; // Ajusta la posición del botón a la derecha (corregí aquí según tu comentario anterior)
+
+      &:hover {
+        background-color: #3050a0; // Un tono más oscuro al pasar el mouse
+      }
+    }
+  }
+  .tarjeta-motivos {
+    border-radius: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 370px;
+    height: 430px; /* Ajusté a auto para que la altura se adapte al contenido */
+    flex-shrink: 0; // Evita que las tarjetas se encojan
+    display: flex;
+    flex-direction: column;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 1.5rem 1.5rem 0 0; // Bordes redondeados solo en la parte superior
+    }
+
+    .texto {
+      background: linear-gradient(180deg, #4068d3 0%, #002c55 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 2vh;
+      height: 100%;
+      border-radius: 0 0 1.5rem 1.5rem; // Bordes redondeados solo en la parte superior
+
+      h2 {
+        color: white;
+        width: 100%;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        padding-left: 1.6vw;
+        padding-right: 1.6vw;
+        /* font-size: ... (si tienes un tamaño específico) */
+      }
+
+      p {
+        color: white;
+        font-family: "Lato", sans-serif;
+        width: 100%;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-top: 1rem;
+        padding-left: 1.6vw;
+        padding-right: 1.6vw;
+      }
+    }
+  }
+  .conoce-planes {
+    background: linear-gradient(180deg, #DCD59A, #CBA052);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    border: none;
+    border-radius: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}

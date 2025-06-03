@@ -1,0 +1,99 @@
+<div class="video-emotivo">
+  <h1 class="titulo-principal">¡VACACIONES DE POR VIDA!</h1>
+  <div class="descripcion-container">
+    <p class="descripcion">
+      Accede a experiencias exclusivas, beneficios únicos y la posibilidad de volver cada año a tu lugar favorito en el
+      caribe.
+    </p>
+  </div>
+
+  <div class="descubrir-mas">
+    <a  href="#seccion-video">DESCUBRIR MÁS</a>
+    <img src="/assets/icons/double-down.svg" alt="Flecha abajo" />
+
+  </div>
+
+</div>
+
+<div class="video-explicativo" id="seccion-video">
+  <h1 class="titulo">Hay lugares que se quedan contigo para siempre</h1>
+  <p class="explicacion">
+    Zuana Dream Pass es tu acceso a una experiencia única en uno de los destinos más encantadores del Caribe. Más que
+    vacaciones,
+    es volver a un lugar que se siente como casa, rodeado de sol, mar y momentos que se convierten en tradición.
+  </p>
+
+  <div class="pantalla-con-video">
+    <img src="assets/img/Video-explicativo.png" alt="Aqui va el video explicativo">
+  </div>
+
+</div>
+
+<div class="motivos">
+  <h1>Motivos para pertenecer a esta familia</h1>
+  <div class="tarjetas-horizontales" #tarjetasHorizontal>
+    <div class="tarjeta-motivos">
+
+      <img src="assets/img/motivos/motivo-1.png" alt="con amigos">
+      <div class="texto">
+        <h2>Viaja en combo para siempre</h2>
+        <p>Comparte el plan, divide el costo y disfruta con amigos o familia. ¡Una forma flexible de tener tu Zuana
+          Dream Pass entre todos!</p>
+      </div>
+    </div>
+
+    <div class="tarjeta-motivos">
+      <img src="assets/img/motivos/motivo-2.png" alt="frecuencia">
+      <div class="texto">
+        <h2>Visítanos cada año o cada dos años</h2>
+        <p>Siéntete en la libertad de elegir la frecuencia con la que te gustaría compartir con nuestra familia Zuana
+        </p>
+      </div>
+    </div>
+
+    <div class="tarjeta-motivos">
+      <img src="assets/img/motivos/motivo-3.png" alt="interval">
+      <div class="texto">
+        <h2>Conoce otros lugares del mundo</h2>
+        <p>Intercambia tu semana en el Zuana con otros lugares del mundo por medio de nuestra alianza con Interval</p>
+      </div>
+    </div>
+
+    <div class="tarjeta-motivos">
+      <img src="assets/img/motivos/motivo-4.png" alt="acompañamiento">
+      <div class="texto">
+        <h2>Acompañamiento en tu inversión</h2>
+        <p>Una vez adquieras tu membresía, despreocúpate por manejar tu Zuana Dream Pass. Nosotros facilitaremos el
+          proceso</p>
+      </div>
+
+    </div>
+
+    <div class="tarjeta-motivos">
+      <img src="assets/img/motivos/motivo-5.png" alt="adicionales">
+      <div class="texto">
+        <h2>Disfruta de actividades adicionales</h2>
+        <p>En cada uno de nuestros planes te ofrecemos oportunidades que te permiten vivir una experiencia personalizada
+        </p>
+      </div>
+    </div>
+
+    @if (showRightScrollButton) {
+    <button class="desplazar-tarjetas" (click)="scrollToNextSection()">
+      <img src="/assets/icons/tri-right.svg" alt="Flecha derecha" />
+    </button>
+    }
+
+    @if (showLeftScrollButton) {
+    <button class="devolver-tarjetas" (click)="scrollToPrevSection()">
+      <img src="/assets/icons/tri-left.svg" alt="Flecha izquierda" />
+    </button>
+    }
+
+  </div>
+
+  <a class="conoce-planes" > Conoce nuestros planes</a>
+</div>
+
+
+

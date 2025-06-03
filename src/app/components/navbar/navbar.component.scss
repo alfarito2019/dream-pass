@@ -1,0 +1,103 @@
+@use "../../../styles.scss"; // Asegúrate de que este path sea correcto
+
+.navbar {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center; // Alinea verticalmente al centro
+  
+  // Padding: Usamos vw para que el padding horizontal se adapte al ancho de la pantalla.
+  // Para el padding vertical, usamos rem o un valor fijo para una altura mínima.
+  // Si en tu diseño original el padding vertical implícito era de unos 10-15px,
+  // 10px / 16 (base rem) = 0.625rem
+  padding: 0.5rem 2vw; // Un padding vertical base (0.8rem ≈ 12.8px) y horizontal adaptable
+  
+  // Altura del Navbar: Usamos vh para que la altura escale con el viewport.
+  // Tu tenías '40 hv', que probablemente quisiste decir '40px' o '40vh'.
+  // Si querías una altura que se adapte:
+  height: 10vh; // Ejemplo: 8% de la altura del viewport. Ajusta este valor.
+  min-height: 60px; // Altura mínima para asegurar que el contenido sea legible.
+
+  background: linear-gradient(180deg, #4068d3 0%, #002c55 100%);
+  opacity: 0.7;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000; // Z-index alto para asegurar que esté por encima de todo
+}
+
+.logo {
+  // Ajusta la altura del logo al contenedor padre (navbar)
+  // `object-fit: contain` es clave para mantener las proporciones sin recortar.
+  height: 100%; // Ocupa el 80% de la altura del navbar
+  width: auto; // Mantiene proporciones
+  object-fit: contain;
+}
+
+.asesor {
+  display: flex;
+  align-items: center; // Centra verticalmente los elementos dentro de .asesor
+  height: 100%;
+  // Gap: Convertimos 31px a rem para que se adapte al tamaño de fuente base
+  // 31px / 16 (base rem) = 1.9375rem
+  gap: 2rem; 
+}
+
+.img-servicio-cliente {
+  // Ajusta la altura de la imagen al contenedor padre (`.asesor`, que a su vez se adapta al navbar)
+  height: 100%; // Ocupa el 70% de la altura del contenedor .asesor (o ajusta al 100% si quieres que sea tan alta como el botón)
+  width: auto; // Mantiene proporciones
+  object-fit: contain;
+}
+
+.boton-zuana {
+  // Padding: Convertimos 15px a rem
+  padding: 0.8rem 1.5rem; // Aproximadamente 12.8px de padding vertical y 24px horizontal
+  
+  background-color: transparent;
+  border: 2px solid white;
+  
+  // Border-radius: Convertimos 24px a rem
+  border-radius: 1.5rem; // 24px / 16 = 1.5rem
+  
+  color: white;
+  
+  // Font-size: Usamos clamp para que el texto escale con el viewport pero tenga límites.
+  // Tu tenías 24px, si tu pantalla es 1728px, 24px / 17.28 = 1.38vw
+  font-size: clamp(0.9rem, 1.38vw, 1.2rem); // Por ejemplo, de 14.4px a 19.2px, escalando con vw.
+  
+  font-family: 'Lato', sans-serif;
+  font-weight: 600; // Medium
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    background-color: white;
+    color: #007BFF;
+    border-color: #007BFF; // Para un mejor efecto hover
+  }
+}
+
+// Mantener los nav-links ocultos para el menú hamburguesa
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem; // Esto es para el futuro, si implementas enlaces visibles
+}
+
+/* --- Media Queries para Ajustes Específicos en Móviles --- */
+@media (max-width: 768px) {
+  .navbar {
+    height: 10vh; // Permite que el navbar sea un poco más alto en móviles
+    padding: 0.8rem 1rem; // Reduce el padding horizontal en móviles
+  }
+
+
+  // Si planeas un menú hamburguesa, aquí esconderías los elementos de navegación "normales"
+  .nav-links {
+    display: none; 
+  }
+}
+
+// Puedes añadir más media queries si lo necesitas, por ejemplo, para tabletas
+// @media (max-width: 1024px) { ... }
