@@ -1,0 +1,28 @@
+<div class="espacio-planes">
+    <div class="tarjeta-planes">
+        <div class="superior">
+            <div [class.selected]="planSeleccionado === 'Ola Dorada'"
+                [class.un-selected]="planSeleccionado !== 'Ola Dorada'" (click)="seleccionarPlan('Ola Dorada')">
+                Plan Ola Dorada
+            </div>
+            <div [class.selected]="planSeleccionado === 'Coral'" [class.un-selected]="planSeleccionado !== 'Coral'"
+                (click)="seleccionarPlan('Coral')">
+                Plan Coral
+            </div>
+            <div [class.selected]="planSeleccionado === 'Brisa'" [class.un-selected]="planSeleccionado !== 'Brisa'"
+                (click)="seleccionarPlan('Brisa')">
+                Plan Brisa
+            </div>
+        </div>
+        <div class="inferior" [ngStyle]="{ 'border-radius': roundPorPlan[planSeleccionado] }">
+            <img [src]="planes[planSeleccionado].imagen" [alt]="planSeleccionado" />
+            <div class="parte-derecha">
+                <div class="descripcion">
+                    <h2>{{ planes[planSeleccionado].titulo }}</h2>
+                    <h4>{{ planes[planSeleccionado].descripcion }}</h4>
+                </div>
+                <button class="mas-informacion">más información</button>
+            </div>
+        </div>
+    </div>
+</div>

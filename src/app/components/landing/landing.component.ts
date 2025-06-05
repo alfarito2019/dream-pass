@@ -1,10 +1,13 @@
 import { Component, ViewChild, ElementRef, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-
+import { PlanesComponent } from '../planes/planes.component';
+import { TablaComponent } from '../tabla/tabla.component';
+import { FooterComponent } from '../footer/footer.component';
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [PlanesComponent, TablaComponent, FooterComponent],
 })
 export class LandingComponent implements AfterViewInit {
   @ViewChild('tarjetasHorizontal') tarjetasHorizontalRef!: ElementRef;

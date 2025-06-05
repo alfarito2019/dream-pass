@@ -1,0 +1,152 @@
+// Variables
+$font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$text-color-dark: #212529;
+$text-color-medium: #495057;
+$text-color-light: #6c757d;
+$header-text-color: #343a40;
+$percentage-font-weight: 700;
+$border-color: #e9ecef;
+$table-bg: #ffffff;
+$table-shadow: 0 0.5vh 1.5vh rgba(0, 0, 0, 0.07);
+$table-border-radius: 1.5vh;
+$icon-size: 1.3vw; // Escala con la pantalla
+
+.table-container {
+  display: flex;
+  width: 100%;
+  background-color: $table-bg;
+  border-radius: $table-border-radius;
+  box-shadow: $table-shadow;
+  overflow: hidden;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: clamp(1vh, 2vw, 16px) clamp(1.2vh, 3vw, 20px);
+    vertical-align: middle;
+    font-size: 1.3vw;
+    font-family: 'monserrat', $font-family;
+    font-weight: 500;
+  }
+
+  thead {
+    th {
+      color: $header-text-color;
+      font-weight: 600;
+      border-bottom: 0.3vh solid $border-color;
+      background-color: $table-bg;
+      font-size: 1.5vw;
+      font-family: 'monserrat', $font-family;
+
+      &.header-beneficios {
+        text-align: left;
+        padding-left: clamp(1.2vh, 2vw, 25px);
+      }
+
+      &.header-plan {
+        text-align: center;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 0.2vh solid $border-color;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    td {
+      color: $text-color-medium;
+
+      &.feature-name {
+        text-align: left;
+        color: $text-color-dark;
+        padding-left: clamp(1.2vh, 2vw, 25px);
+      }
+
+      &.plan-value {
+        text-align: center;
+        color: $text-color-dark;
+
+        &.percentage {
+          font-weight: $percentage-font-weight;
+          font-size: 1.5vw;
+        }
+
+        img {
+          width: $icon-size;
+          height: $icon-size;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+// Media queries
+@media (max-width: 768px) {
+  .table-container {
+    padding: 1.5vh 3vw;
+    border-radius: $table-border-radius * 0.75;
+  }
+
+  table {
+    th,
+    td {
+      padding: clamp(0.8vh, 1.5vw, 12px) clamp(1vh, 2vw, 10px);
+      font-size: clamp(1vh, 1.6vw, 14px);
+    }
+
+    thead th {
+      font-size: clamp(1.2vh, 1.8vw, 15px);
+
+      &.header-beneficios {
+        padding-left: clamp(1vh, 2vw, 15px);
+      }
+    }
+
+    td.plan-value img {
+      width: $icon-size * 0.9;
+      height: $icon-size * 0.9;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .table-container {
+    padding: 1vh 2vw;
+    border-radius: $table-border-radius * 0.5;
+  }
+
+  table {
+    th,
+    td {
+      padding: clamp(0.6vh, 1.5vw, 10px) clamp(0.6vh, 1.5vw, 8px);
+      font-size: clamp(0.9vh, 1.5vw, 13px);
+    }
+
+    thead th {
+      font-size: clamp(1vh, 1.5vw, 14px);
+
+      &.header-beneficios {
+        padding-left: clamp(0.8vh, 1.5vw, 10px);
+      }
+    }
+
+    td.plan-value img {
+      width: $icon-size * 0.8;
+      height: $icon-size * 0.8;
+    }
+  }
+}

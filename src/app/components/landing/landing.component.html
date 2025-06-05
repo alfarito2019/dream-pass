@@ -1,4 +1,4 @@
-<div class="video-emotivo">
+<div class="video-emotivo" id>
   <h1 class="titulo-principal">¡VACACIONES DE POR VIDA!</h1>
   <div class="descripcion-container">
     <p class="descripcion">
@@ -8,7 +8,7 @@
   </div>
 
   <div class="descubrir-mas">
-    <a  href="#seccion-video">DESCUBRIR MÁS</a>
+    <a href="#seccion-video">DESCUBRIR MÁS</a>
     <img src="/assets/icons/double-down.svg" alt="Flecha abajo" />
 
   </div>
@@ -29,7 +29,7 @@
 
 </div>
 
-<div class="motivos">
+<div class="motivos" id="seccion-motivos">
   <h1>Motivos para pertenecer a esta familia</h1>
   <div class="tarjetas-horizontales" #tarjetasHorizontal>
     <div class="tarjeta-motivos">
@@ -92,8 +92,112 @@
 
   </div>
 
-  <a class="conoce-planes" > Conoce nuestros planes</a>
+  <a class="conoce-planes"> Conoce nuestros planes</a>
 </div>
 
+<div class="seccion-tabla">
+  <h1>Descubre las ventajas de ser miembro Zuana Dream Pass</h1>
+  <div class="tabla-vs" id="tabla-comparacion">
 
 
+
+    <div class="table-column" id="tabla-izquierda">
+      <h3>Clientes frecuentes sin membresía</h3>
+      <div class="razones-sin-membresia">
+        <img src="assets/icons/icono-calendario.svg" alt="Icono sin membresía 1">
+        <span>Disponibilidad limitada. Especialmente en fechas clave.</span>
+      </div>
+      <div class="razones-sin-membresia">
+        <img src="assets/icons/pago-tarifas.svg" alt="Icono sin membresía 1">
+        <span>Pagas tarifas variables según la demanda y temporada.</span>
+      </div>
+      <div class="razones-sin-membresia">
+        <img src="assets/icons/beneficios.svg" alt="Icono sin membresía 1">
+        <span>Acceso a beneficios estandar que brinda el hotel.</span>
+      </div>
+      <div class="razones-sin-membresia">
+        <img src="assets/icons/disponibilidad.svg" alt="Icono sin membresía 1">
+        <span>Debes ajustar fechas según disponibilidad del hotel.</span>
+      </div>
+      <div class="razones-sin-membresia">
+        <img src="assets/icons/futuro.svg" alt="Icono sin membresía 1">
+        <span>Solo pagas por cada estancia sin un beneficio a futuro.</span>
+      </div>
+    </div>
+
+    <div class="table-column" id="tabla-derecha">
+      <h3>Clientes frecuentes con membresía</h3>
+      <div class="razones-con-membresia">
+        <img src="assets/icons/icono-calendario-azul.svg" alt="Icono sin membresía 1">
+        <span>Disponibilidad limitada. Especialmente en fechas clave.</span>
+      </div>
+      <div class="razones-con-membresia">
+        <img src="assets/icons/pago-tarifas-azul.svg" alt="Icono sin membresía 1">
+        <span>Pagas tarifas variables según la demanda y temporada.</span>
+      </div>
+      <div class="razones-con-membresia">
+        <img src="assets/icons/beneficios-azul.svg" alt="Icono sin membresía 1">
+        <span>Acceso a beneficios estandar que brinda el hotel.</span>
+      </div>
+      <div class="razones-con-membresia">
+        <img src="assets/icons/disponibilidad-azul.svg" alt="Icono sin membresía 1">
+        <span>Debes ajustar fechas según disponibilidad del hotel.</span>
+      </div>
+      <div class="razones-con-membresia">
+        <img src="assets/icons/futuro-azul.svg" alt="Icono sin membresía 1">
+        <span>Solo pagas por cada estancia sin un beneficio a futuro.</span>
+      </div>
+    </div>
+  </div>
+  <a class="conoce-planes"> Conoce nuestros planes</a>
+</div>
+
+<div class="seccion-planes">
+  <h1>¡Selecciona tus vacaciones soñadas al estilo Zuana Dream Pass!</h1>
+  <h4>Elige entre experiencias inolvidables, beneficios exclusivos y lujo frente al mar</h4>
+  <app-planes class="planes"></app-planes>
+</div>
+
+<div class="tabla-comparacion">
+  <h1>¿Cual plan vas a elegir?</h1>
+  <app-tabla class="tabla"></app-tabla>
+  <a class="conoce-planes"> Conoce nuestros planes</a>
+</div>
+
+<div class="metodos">
+  <h1>Nuestros métodos de pago</h1>
+  <h4>¡Te presentamos los nuevos métodos de pago que diseñamos para ti!</h4>
+
+  <div class="tarjetas-horizontales" #tarjetasHorizontal>
+    <div class="tarjeta">
+
+      <img src="assets/img/metodos/compra-ahora.png" alt="Compra ahora y paga despues">
+      <div class="texto">
+        <h2>Compra ahora y paga despues</h2>
+        <p>Aparta hoy y empieza a pagar en 3, 6 o 9 meses.</p>
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <img src="assets/img/metodos/compartida.png" alt="Compra compartida">
+      <div class="texto">
+        <h2>Compra compartida</h2>
+        <p>Compra tu Zuana Dream Pass con amigos, familia o tu parche desde 2 hasta 10 personas.
+        </p>
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <img src="assets/img/metodos/sin-interes.png" alt="Cuotas sin interés">
+      <div class="texto">
+        <h2>Cuotas sin interés</h2>
+        <p>Con Davivienda y Constructora Bolívar, tu tiempo compartido a cuotas sin costo adicional.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div>
+  <app-footer></app-footer>
+</div>
