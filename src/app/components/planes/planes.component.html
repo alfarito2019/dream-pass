@@ -21,7 +21,8 @@
                     <h2>{{ planes[planSeleccionado].titulo }}</h2>
                     <h4>{{ planes[planSeleccionado].descripcion }}</h4>
                 </div>
-                <button class="mas-informacion">más información</button>
+                <button class="mas-informacion" (click)="openPopup()">Más información</button>
+                <app-plan-modal class="pop-up" *ngIf="showPopup" [plan]=planSeleccionado  (onClose)="closePopup()" ></app-plan-modal>
             </div>
         </div>
     </div>

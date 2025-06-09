@@ -186,14 +186,13 @@
   width: 100%;
   height: auto;
   padding-top: 5vh;
-  padding-left: 11vw;
-  padding-right: 11vw;
+  padding-left: 6vw;
+  padding-right: 6vw;
   padding-bottom: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #f9f9f9;
 
   .tarjetas-horizontales {
     width: 100%;
@@ -206,6 +205,8 @@
     overflow-x: hidden; /* Oculta el desbordamiento horizontal */
     padding-top: 8vh;
     padding-bottom: 8vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
     box-sizing: border-box;
 
     .desplazar-tarjetas {
@@ -243,9 +244,10 @@
   }
   .tarjeta-motivos {
     border-radius: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: -4px 6px 4px rgba(0, 0, 0, 0.25);
+    
     width: 370px;
-    height: 430px; /* Ajusté a auto para que la altura se adapte al contenido */
+    height: auto; /* Ajusté a auto para que la altura se adapte al contenido */
     flex-shrink: 0; // Evita que las tarjetas se encojan
     display: flex;
     flex-direction: column;
@@ -263,8 +265,10 @@
       flex-direction: column;
       justify-content: flex-start;
       padding-top: 2vh;
+      padding-bottom: 1vh;
       height: 100%;
       border-radius: 0 0 1.5rem 1.5rem; // Bordes redondeados solo en la parte superior
+      gap: 1vh;
 
       h2 {
         color: white;
@@ -274,6 +278,7 @@
         font-weight: 600;
         padding-left: 1.6vw;
         padding-right: 1.6vw;
+        line-height: 4.5vh;
         /* font-size: ... (si tienes un tamaño específico) */
       }
 
@@ -283,9 +288,9 @@
         width: 100%;
         font-size: 1rem;
         font-weight: 500;
-        margin-top: 1rem;
         padding-left: 1.6vw;
         padding-right: 1.6vw;
+        line-height: 3.5vh;
       }
     }
   }
@@ -423,6 +428,13 @@
 }
 
 .seccion-planes {
+
+  h1 {
+    text-align: center;
+  }
+  h4 {
+    text-align: center;
+  }
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -469,6 +481,14 @@
   padding-bottom: 5vh;
   gap: 3vh;
 
+  h4 {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+
+      }
+
   .tarjetas-horizontales {
   width: 100%;
   display: grid;
@@ -485,9 +505,10 @@
 }
   .tarjeta {
     border-radius: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: -4px 6px 4px rgba(0, 0, 0, 0.25);
+    
     width: 370px;
-    height: 430px; /* Ajusté a auto para que la altura se adapte al contenido */
+    height: auto; /* Ajusté a auto para que la altura se adapte al contenido */
     flex-shrink: 0; // Evita que las tarjetas se encojan
     display: flex;
     flex-direction: column;
@@ -505,8 +526,11 @@
       flex-direction: column;
       justify-content: flex-start;
       padding-top: 2vh;
+      padding-bottom: 3vh;
       height: 100%;
       border-radius: 0 0 1.5rem 1.5rem; // Bordes redondeados solo en la parte superior
+      gap: 1vh;
+      min-height: 20vh;
 
       h2 {
         color: white;
@@ -516,6 +540,7 @@
         font-weight: 600;
         padding-left: 1.6vw;
         padding-right: 1.6vw;
+        line-height: 4.5vh;
         /* font-size: ... (si tienes un tamaño específico) */
       }
 
@@ -525,16 +550,15 @@
         width: 100%;
         font-size: 1rem;
         font-weight: 500;
-        margin-top: 1rem;
         padding-left: 1.6vw;
         padding-right: 1.6vw;
+        line-height: 3.5vh;
       }
     }
   }
 
     
 }
-
 
 .conoce-planes {
     background: linear-gradient(180deg, #dcd59a, #cba052);

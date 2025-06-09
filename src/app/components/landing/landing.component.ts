@@ -2,6 +2,7 @@ import { Component, ViewChild, ElementRef, AfterViewInit, ChangeDetectionStrateg
 import { PlanesComponent } from '../planes/planes.component';
 import { TablaComponent } from '../tabla/tabla.component';
 import { FooterComponent } from '../footer/footer.component';
+import { PlanModalComponent } from '../plan-modal/plan-modal.component';
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -10,6 +11,9 @@ import { FooterComponent } from '../footer/footer.component';
   imports: [PlanesComponent, TablaComponent, FooterComponent],
 })
 export class LandingComponent implements AfterViewInit {
+  
+
+
   @ViewChild('tarjetasHorizontal') tarjetasHorizontalRef!: ElementRef;
   showRightScrollButton: boolean = false;
   showLeftScrollButton: boolean = true;

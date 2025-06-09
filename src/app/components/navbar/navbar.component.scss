@@ -1,5 +1,17 @@
 @use "../../../styles.scss"; // Asegúrate de que este path sea correcto
 
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: top 0.3s ease;
+  z-index: 1000;
+
+  &.hidden {
+    top: -100px; // Oculta el navbar moviéndolo hacia arriba
+  }
+}
+
 .navbar {
   position: fixed;
   display: flex;
