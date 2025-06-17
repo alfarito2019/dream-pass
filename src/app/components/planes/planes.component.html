@@ -21,9 +21,21 @@
                     <h2>{{ planes[planSeleccionado].titulo }}</h2>
                     <h4>{{ planes[planSeleccionado].descripcion }}</h4>
                 </div>
-                <button class="mas-informacion" (click)="openPopup()">Más información</button>
-                <app-plan-modal class="pop-up" *ngIf="showPopup" [plan]=planSeleccionado  (onClose)="closePopup()" ></app-plan-modal>
+                <button class="mas-informacion" (click)="abrirModal()">Más información</button>
+                
             </div>
         </div>
     </div>
+</div>
+
+<div class="overlay" *ngIf="showModal">
+  <div class="custom-modal">
+    <button class="cerrar" (click)="cerrarModal()">✖</button>
+    <app-photo-carousel
+      [images]="planes[planSeleccionado].carouselImages"
+    ></app-photo-carousel>
+    <h2>Plan {{ planSeleccionado}}</h2>
+    <p>Aquí va el contenido que tú quieras, con total libertad.</p>
+    <!-- Puedes incluso incluir otro componente dentro -->
+  </div>
 </div>

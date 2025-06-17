@@ -1,5 +1,10 @@
 $azul-zuana: #002C55;
 
+/* styles.scss or planes.component.scss */
+::ng-deep .mat-dialog-container {
+  border-radius: 0px;
+}
+
 .espacio-planes {
   width: 100%;
   display: flex;
@@ -111,15 +116,35 @@ $azul-zuana: #002C55;
   }
 }
 
-.pop-up {
+.overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* fondo semitransparente */
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   z-index: 1000;
+}
+
+/* Modal en sí */
+.custom-modal {
+  background: white;
+  border-radius: 15px; /* puedes cambiar a lo que quieras */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 50vw;
+  height: 85vh;
+  position: relative;
+}
+
+/* Botón de cerrar */
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1000;
+  color: white;
 }
