@@ -22,7 +22,7 @@
                     <h4>{{ planes[planSeleccionado].descripcion }}</h4>
                 </div>
                 <button class="mas-informacion" (click)="abrirModal()">Más información</button>
-                
+
             </div>
         </div>
     </div>
@@ -31,11 +31,21 @@
 <div class="overlay" *ngIf="showModal">
   <div class="custom-modal">
     <button class="cerrar" (click)="cerrarModal()">✖</button>
-    <app-photo-carousel
-      [images]="planes[planSeleccionado].carouselImages"
-    ></app-photo-carousel>
-    <h2>Plan {{ planSeleccionado}}</h2>
-    <p>Aquí va el contenido que tú quieras, con total libertad.</p>
-    <!-- Puedes incluso incluir otro componente dentro -->
+
+    <!-- Parte superior fija (por ejemplo, el carrusel) -->
+    <app-photo-carousel [images]="planes[planSeleccionado].carouselImages"></app-photo-carousel>
+
+    <!-- Parte inferior que puede crecer y hacer scroll -->
+    <div class="inferior">
+      <h2>Plan {{ planSeleccionado }}</h2>
+      <p>{{ planes[planSeleccionado].descripcion2 }}</p>
+
+      <ul class="beneficios">
+        <li *ngFor="let beneficio of planes[planSeleccionado].beneficios">
+          {{ beneficio }}
+        </li>
+      </ul>
+      <button class="mas-informacion" (click)="abrirMaqueta()">¡Quiero este plan!</button>
+    </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-$azul-zuana: #002C55;
+$azul-zuana: #002c55;
 
 /* styles.scss or planes.component.scss */
 ::ng-deep .mat-dialog-container {
@@ -118,33 +118,51 @@ $azul-zuana: #002C55;
 
 .overlay {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;   /* modal pegado desde arriba */
+  padding-top: 5vh;              /* mantener separación superior */
   z-index: 1000;
-}
 
-/* Modal en sí */
-.custom-modal {
-  background: white;
-  border-radius: 15px; /* puedes cambiar a lo que quieras */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  width: 50vw;
-  height: 85vh;
-  position: relative;
-}
+  .custom-modal {
+    overflow-y: auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 50vw;                 /* ancho fijo */
+    max-height: 80vh;            /* alto máximo para pantallas pequeñas */
+    position: relative;
+    display: flex;
+    flex-direction: column;      /* para poder hacer flex en la parte inferior */
 
-/* Botón de cerrar */
-.cerrar {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  background: transparent;
-  border: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  z-index: 1000;
-  color: white;
+    &::-webkit-scrollbar {
+    display: none;
+  }
+
+    .cerrar {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: transparent;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      z-index: 1001;             /* encima del modal */
+      color: white;              /* antes estaba blanco, cambia según fondo */
+    }
+
+    /* esta es la única sección que hace scroll */
+    .inferior {
+      
+      display: flex;
+      flex-direction: column;            /* ocupa todo el espacio restante */
+      padding: 1rem 3vw;
+    }
+  }
 }
